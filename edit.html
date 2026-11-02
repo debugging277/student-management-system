@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container edit-container">
+
+    <section class="section">
+
+        <h1>Edit Student Details</h1>
+
+        <form action="/update/{{ student['id'] }}" method="POST"
+              class="student-form">
+
+            <input type="text"
+                name="name"
+                value="{{ student['name'] }}"
+                placeholder="Student Name"
+                required>
+
+            <input type="number"
+                name="age"
+                value="{{ student['age'] }}"
+                placeholder="Age"
+                min="1"
+                max="120"
+                required>
+
+            <button type="submit">Save Changes</button>
+
+            <a href="/" class="cancel-btn">Cancel</a>
+
+        </form>
+
+    </section>
+
+</div>
+
+</body>
+</html>
